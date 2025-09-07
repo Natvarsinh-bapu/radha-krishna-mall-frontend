@@ -90,7 +90,7 @@
                   <span>₹{{ total }}</span>
                 </div>
                 <NuxtLink
-                  to="/checkout"
+                  to="/"
                   class="btn btn-success w-100 rounded-pill py-2"
                 >
                   Proceed to Checkout

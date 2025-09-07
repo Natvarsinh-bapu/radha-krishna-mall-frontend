@@ -30,7 +30,7 @@
               </div>
               <div class="ms-auto">
                 <NuxtLink
-                  to="/account/edit"
+                  to="/"
                   class="btn btn-sm btn-outline-primary rounded-pill"
                 >
                   Edit Profile
