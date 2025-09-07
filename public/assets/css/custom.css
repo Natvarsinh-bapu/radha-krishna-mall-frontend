@@ -1,0 +1,112 @@
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.age-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.age-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  cursor: pointer;
+}
+
+.brand-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: #f3f3f3;
+}
+
+.brand-card img {
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pack-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.pack-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pack-image {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.bg-light-subtle {
+  background: linear-gradient(135deg, #fefefe 0%, #f8f9fa 100%);
+}
+
+.hover-up {
+  cursor: pointer;
+}
+
+.theme-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+
+.theme-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.theme-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid #f1f1f1;
+  transition: transform 0.3s ease;
+}
+
+.theme-card:hover .theme-img {
+  transform: scale(1.1);
+  border-color: #ffc107;
+}
+
+.social-icon img {
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}

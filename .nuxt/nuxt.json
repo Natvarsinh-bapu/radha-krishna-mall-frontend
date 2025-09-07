@@ -1,0 +1,9 @@
+{
+  "_hash": "VILhcMNY2niGbHhgJa6C93wUnAhhhDeXDec4aiOlYG0",
+  "project": {
+    "rootDir": "/var/www/radha-krishna-mall-frontend"
+  },
+  "versions": {
+    "nuxt": "4.0.2"
+  }
+}
