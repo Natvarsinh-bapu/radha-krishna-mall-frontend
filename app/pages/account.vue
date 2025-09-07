@@ -43,7 +43,7 @@
           <div class="row g-4">
             <!-- My Orders -->
             <div class="col-md-6 col-lg-3">
-              <NuxtLink to="/orders" class="text-decoration-none">
+              <NuxtLink to="/" class="text-decoration-none">
                 <div class="card border-0 shadow-sm rounded-4 p-4 h-100 text-center">
                   <i class="bi bi-bag fs-2 text-primary mb-3"></i>
                   <h6 class="fw-bold text-dark">My Orders</h6>
@@ -54,7 +54,7 @@
 
             <!-- Wishlist -->
             <div class="col-md-6 col-lg-3">
-              <NuxtLink to="/wishlist" class="text-decoration-none">
+              <NuxtLink to="/" class="text-decoration-none">
                 <div class="card border-0 shadow-sm rounded-4 p-4 h-100 text-center">
                   <i class="bi bi-heart fs-2 text-danger mb-3"></i>
                   <h6 class="fw-bold text-dark">Wishlist</h6>
@@ -65,7 +65,7 @@
 
             <!-- Cart -->
             <div class="col-md-6 col-lg-3">
-              <NuxtLink to="/cart" class="text-decoration-none">
+              <NuxtLink to="/" class="text-decoration-none">
                 <div class="card border-0 shadow-sm rounded-4 p-4 h-100 text-center">
                   <i class="bi bi-cart fs-2 text-success mb-3"></i>
                   <h6 class="fw-bold text-dark">Cart</h6>
@@ -76,7 +76,7 @@
 
             <!-- Addresses -->
             <div class="col-md-6 col-lg-3">
-              <NuxtLink to="/account/addresses" class="text-decoration-none">
+              <NuxtLink to="/" class="text-decoration-none">
                 <div class="card border-0 shadow-sm rounded-4 p-4 h-100 text-center">
                   <i class="bi bi-geo-alt fs-2 text-warning mb-3"></i>
                   <h6 class="fw-bold text-dark">Addresses</h6>
@@ -87,7 +87,7 @@
 
             <!-- Settings -->
             <div class="col-md-6 col-lg-3">
-              <NuxtLink to="/account/settings" class="text-decoration-none">
+              <NuxtLink to="/" class="text-decoration-none">
                 <div class="card border-0 shadow-sm rounded-4 p-4 h-100 text-center">
                   <i class="bi bi-gear fs-2 text-secondary mb-3"></i>
                   <h6 class="fw-bold text-dark">Settings</h6>
@@ -98,7 +98,7 @@
 
             <!-- Profile -->
             <div class="col-md-6 col-lg-3">
-              <NuxtLink to="/account/profile" class="text-decoration-none">
+              <NuxtLink to="/" class="text-decoration-none">
                 <div class="card border-0 shadow-sm rounded-4 p-4 h-100 text-center">
                   <i class="bi bi-person-circle fs-2 text-info mb-3"></i>
                   <h6 class="fw-bold text-dark">Profile</h6>
