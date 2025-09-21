@@ -104,7 +104,7 @@
             </div>
           </section>
 
-          <!-- new arrival -->
+          <!-- New Arrival Section -->
           <section id="new-arrival" class="bestsellers-section section py-5">
             <div class="container text-center mb-5" data-aos="fade-up">
               <h2 class="fw-bold">New Arrival</h2>
@@ -136,8 +136,8 @@
                       <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
                     </div>
 
-                    <!-- Actions -->
-                    <div class="d-flex gap-2">
+                    <!-- Actions: stacked on mobile -->
+                    <div class="d-flex flex-column flex-md-row gap-2">
                       <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
                         Add to Cart
                       </button>
@@ -151,52 +151,53 @@
             </div>
           </section>
 
-          <!-- best sellers -->
-          <section id="best-sellers" class="bestsellers-section section py-5">
-            <div class="container text-center mb-5" data-aos="fade-up">
-              <h2 class="fw-bold">Best Sellers</h2>
-            </div>
+            <!-- Best Sellers Section -->
+            <section id="best-sellers" class="bestsellers-section section py-5">
+              <div class="container text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Best Sellers</h2>
+              </div>
 
-            <div class="container">
-              <div class="row g-4">
-                <div
-                  v-for="product in bestSellers"
-                  :key="product.id"
-                  class="col-6 col-sm-6 col-md-3"
-                >
-                  <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100 text-start">
-                    <NuxtLink :to="`/products/${product.id}`">
-                      <img
-                        :src="product.image"
-                        :alt="product.name"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                    </NuxtLink>
+              <div class="container">
+                <div class="row g-4">
+                  <div
+                    v-for="product in bestSellers"
+                    :key="product.id"
+                    class="col-6 col-sm-6 col-md-3"
+                  >
+                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100 text-start">
+                      <NuxtLink :to="`/products/${product.id}`">
+                        <img
+                          :src="product.image"
+                          :alt="product.name"
+                          class="img-fluid rounded-3 mb-3"
+                          style="height: 200px; object-fit: cover;"
+                        />
+                      </NuxtLink>
 
-                    <h5 class="fw-semibold text-dark mb-1">{{ product.name }}</h5>
-                    <p class="text-muted small mb-2">{{ product.description }}</p>
+                      <h5 class="fw-semibold text-dark mb-1">{{ product.name }}</h5>
+                      <p class="text-muted small mb-2">{{ product.description }}</p>
 
-                    <!-- Pricing -->
-                    <div class="mb-3">
-                      <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
-                      <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
-                    </div>
+                      <!-- Pricing -->
+                      <div class="mb-3">
+                        <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
+                        <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
+                      </div>
 
-                    <!-- Actions -->
-                    <div class="d-flex gap-2">
-                      <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
-                        Add to Cart
-                      </button>
-                      <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
-                        Buy Now
-                      </button>
+                      <!-- Actions: stacked on mobile -->
+                      <div class="d-flex flex-column flex-md-row gap-2">
+                        <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                          Add to Cart
+                        </button>
+                        <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                          Buy Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+
         </main>
     </div>
 </template>

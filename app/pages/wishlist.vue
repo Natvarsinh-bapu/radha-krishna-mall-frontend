@@ -38,10 +38,10 @@
                     <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
                   </div>
 
-                  <!-- Buttons -->
-                  <div class="d-flex gap-2">
+                  <!-- Buttons: stacked on mobile -->
+                  <div class="d-flex flex-column flex-sm-row gap-2">
                     <button
-                      class="btn btn-sm btn-outline-danger rounded-pill"
+                      class="btn btn-sm btn-outline-danger rounded-pill flex-grow-0"
                       @click="removeFromWishlist(product.id)"
                     >
                       <i class="bi bi-trash"></i>
@@ -50,7 +50,7 @@
                       class="btn btn-sm btn-primary rounded-pill flex-grow-1"
                       @click="addToCart(product)"
                     >
-                      <i class="bi bi-cart me-1"></i> Add to Cart
+                      Add to Cart
                     </button>
                   </div>
                 </div>
@@ -75,38 +75,10 @@
 import { ref } from "vue";
 
 const wishlist = ref([
-  {
-    id: 1,
-    name: "Wishlist Product 1",
-    description: "Special edition toy",
-    originalPrice: 2499,
-    sellingPrice: 1499,
-    image: "/assets/img/offer.jpeg",
-  },
-  {
-    id: 2,
-    name: "Wishlist Product 2",
-    description: "Fun & educational",
-    originalPrice: 1999,
-    sellingPrice: 1299,
-    image: "/assets/img/offer.jpeg",
-  },
-  {
-    id: 3,
-    name: "Wishlist Product 3",
-    description: "Popular choice",
-    originalPrice: 1599,
-    sellingPrice: 999,
-    image: "/assets/img/offer.jpeg",
-  },
-  {
-    id: 4,
-    name: "Wishlist Product 4",
-    description: "Best seller",
-    originalPrice: 2999,
-    sellingPrice: 2199,
-    image: "/assets/img/offer.jpeg",
-  },
+  { id: 1, name: "Wishlist Product 1", description: "Special edition toy", originalPrice: 2499, sellingPrice: 1499, image: "/assets/img/offer.jpeg" },
+  { id: 2, name: "Wishlist Product 2", description: "Fun & educational", originalPrice: 1999, sellingPrice: 1299, image: "/assets/img/offer.jpeg" },
+  { id: 3, name: "Wishlist Product 3", description: "Popular choice", originalPrice: 1599, sellingPrice: 999, image: "/assets/img/offer.jpeg" },
+  { id: 4, name: "Wishlist Product 4", description: "Best seller", originalPrice: 2999, sellingPrice: 2199, image: "/assets/img/offer.jpeg" },
 ]);
 
 // actions
@@ -116,6 +88,5 @@ const removeFromWishlist = (id) => {
 
 const addToCart = (product) => {
   console.log("Add to cart:", product);
-  // here you could dispatch to Pinia/Vuex cart store
 };
 </script>

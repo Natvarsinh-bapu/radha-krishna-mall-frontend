@@ -7,7 +7,6 @@
           <div class="row">
             <!-- Sidebar Filter -->
             <aside class="col-lg-3 col-md-4 mb-4 d-none d-md-block">
-              <!-- Always visible on desktop -->
               <FilterSidebar />
             </aside>
 
@@ -15,7 +14,7 @@
             <div class="col-lg-9 col-md-8">
               <!-- Mobile Filter Toggle -->
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="fw-bold">products Collection</h5>
+                <h5 class="fw-bold">Products Collection</h5>
                 <div class="d-md-none">
                   <button
                     class="btn btn-outline-primary btn-sm rounded-pill"
@@ -67,8 +66,8 @@
                         <span class="fw-bold text-dark">₹{{ product.sellingPrice }}</span>
                       </p>
 
-                      <!-- Actions -->
-                      <div class="d-flex gap-2">
+                      <!-- Actions: stacked on mobile -->
+                      <div class="d-flex flex-column flex-md-row gap-2">
                         <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
                           Add to Cart
                         </button>
@@ -110,38 +109,38 @@
 <script setup>
 import FilterSidebar from "@/components/FilterSidebar.vue";
 
-  const products = [
-    {
-      id: 1,
-      name: "LEGO City Police Set",
-      description: "Ages 6+",
-      originalPrice: 1599,
-      sellingPrice: 1299,
-      image: "/assets/img/offer.jpeg",
-    },
-    {
-      id: 2,
-      name: "Hot Wheels Car Pack",
-      description: "Pack of 5 racing cars",
-      originalPrice: 899,
-      sellingPrice: 699,
-      image: "/assets/img/offer.jpeg",
-    },
-    {
-      id: 3,
-      name: "Barbie Dreamhouse",
-      description: "Includes accessories",
-      originalPrice: 5999,
-      sellingPrice: 4999,
-      image: "/assets/img/offer.jpeg",
-    },
-    {
-      id: 4,
-      name: "Puzzle Game Set",
-      description: "Boosts problem-solving",
-      originalPrice: 599,
-      sellingPrice: 449,
-      image: "/assets/img/offer.jpeg",
-    },
-  ];
+const products = [
+  {
+    id: 1,
+    name: "LEGO City Police Set",
+    description: "Ages 6+",
+    originalPrice: 1599,
+    sellingPrice: 1299,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 2,
+    name: "Hot Wheels Car Pack",
+    description: "Pack of 5 racing cars",
+    originalPrice: 899,
+    sellingPrice: 699,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 3,
+    name: "Barbie Dreamhouse",
+    description: "Includes accessories",
+    originalPrice: 5999,
+    sellingPrice: 4999,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 4,
+    name: "Puzzle Game Set",
+    description: "Boosts problem-solving",
+    originalPrice: 599,
+    sellingPrice: 449,
+    image: "/assets/img/offer.jpeg",
+  },
+];
 </script>

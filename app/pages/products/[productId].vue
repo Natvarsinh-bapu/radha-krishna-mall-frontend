@@ -55,31 +55,63 @@
                 <li><strong>Material:</strong> ABS Plastic</li>
                 <li><strong>Dimensions:</strong> 25 x 18 x 6 cm</li>
               </ul>
+
+              <!-- Add to Cart & Buy Now Buttons -->
+              <div class="d-flex flex-column flex-lg-row gap-3">
+                <button class="btn btn-outline-primary rounded-pill flex-grow-1">
+                  Add to Cart
+                </button>
+                <button class="btn btn-danger rounded-pill flex-grow-1">
+                  Buy Now
+                </button>
+              </div>
             </div>
           </div>
 
           <!-- Related Products -->
           <div class="row mt-5">
-            <div class="col-12">
-              <h4 class="fw-bold mb-4">Related Products</h4>
+            <div class="container text-center mb-5" data-aos="fade-up">
+              <h2 class="fw-bold">Best Sellers</h2>
             </div>
 
-            <div class="col-6 col-md-3 mb-4" v-for="n in 4" :key="n">
-              <NuxtLink :to="`/products/${n}`" class="text-decoration-none text-dark">
-                <div class="card h-100 shadow-sm border rounded-4 hover-shadow">
-                  <img
-                    src="/assets/img/offer.jpeg"
-                    class="card-img-top rounded-top-4"
-                    alt="Related Product"
-                    style="height: 160px; object-fit: cover;"
-                  />
-                  <div class="card-body text-center">
-                    <h6 class="fw-semibold">Toy {{ n }}</h6>
-                    <p class="fw-bold text-dark">₹999</p>
-                    <button class="btn btn-sm btn-primary rounded-pill">View</button>
+            <div class="container">
+              <div class="row g-4">
+                <div
+                  v-for="product in relatedProducts"
+                  :key="product.id"
+                  class="col-6 col-sm-6 col-md-3"
+                >
+                  <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100 text-start">
+                    <NuxtLink :to="`/products/${product.id}`">
+                      <img
+                        :src="product.image"
+                        :alt="product.name"
+                        class="img-fluid rounded-3 mb-3"
+                        style="height: 200px; object-fit: cover;"
+                      />
+                    </NuxtLink>
+
+                    <h5 class="fw-semibold text-dark mb-1">{{ product.name }}</h5>
+                    <p class="text-muted small mb-2">{{ product.description }}</p>
+
+                    <!-- Pricing -->
+                    <div class="mb-3">
+                      <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
+                      <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
+                    </div>
+
+                    <!-- Actions: stacked on mobile -->
+                    <div class="d-flex flex-column flex-md-row gap-2">
+                      <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                        Add to Cart
+                      </button>
+                      <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                        Buy Now
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </NuxtLink>
+              </div>
             </div>
           </div>
         </div>
@@ -87,3 +119,40 @@
     </main>
   </div>
 </template>
+
+<script setup>
+const relatedProducts = [
+  {
+    id: 5,
+    name: "Action Figure Set",
+    description: "Superhero collection",
+    originalPrice: 3999,
+    sellingPrice: 2499,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 6,
+    name: "Drone Camera Toy",
+    description: "Fun flying drone",
+    originalPrice: 4999,
+    sellingPrice: 2999,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 7,
+    name: "Building Blocks",
+    description: "Creative play set",
+    originalPrice: 2499,
+    sellingPrice: 1499,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 8,
+    name: "RC Helicopter",
+    description: "Lightweight & durable",
+    originalPrice: 1999,
+    sellingPrice: 999,
+    image: "/assets/img/offer.jpeg",
+  },
+];
+</script>
