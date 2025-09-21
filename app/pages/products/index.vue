@@ -36,202 +36,48 @@
 
               <!-- Product Grid -->
               <div class="row g-4">
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
+                <div
+                  v-for="product in products"
+                  :key="product.id"
+                  class="col-6 col-sm-6 col-md-4"
+                >
+                  <div
+                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark product-card"
                   >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
+                    <!-- Image -->
+                    <NuxtLink :to="`/products/${product.id}`">
+                      <img
+                        :src="product.image"
+                        class="card-img-top rounded-top-4"
+                        :alt="product.name"
+                        style="height: 220px; object-fit: cover;"
+                      />
+                    </NuxtLink>
 
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
+                    <!-- Body -->
+                    <div class="card-body text-start">
+                      <h6 class="fw-semibold">{{ product.name }}</h6>
+                      <p class="text-muted small">{{ product.description }}</p>
 
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
+                      <!-- Pricing -->
+                      <p class="mb-2">
+                        <span class="text-muted text-decoration-line-through me-2">
+                          ₹{{ product.originalPrice }}
+                        </span>
+                        <span class="fw-bold text-dark">₹{{ product.sellingPrice }}</span>
+                      </p>
 
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
+                      <!-- Actions -->
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                          Add to Cart
+                        </button>
+                        <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                          Buy Now
+                        </button>
+                      </div>
                     </div>
-                  </NuxtLink>
-                </div>
-
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
-
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
-
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
-
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
-                </div>
-
-                <div class="col-6 col-sm-6 col-md-4">
-                  <NuxtLink
-                    to="/products/1"
-                    class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark"
-                  >
-                    <img
-                      src="/assets/img/offer.jpeg"
-                      class="card-img-top rounded-top-4"
-                      alt="Toy 1"
-                      style="height: 220px; object-fit: cover;"
-                    />
-                    <div class="card-body text-center">
-                      <h6 class="fw-semibold">LEGO City Police Set</h6>
-                      <p class="text-muted small">Ages 6+</p>
-                      <p class="fw-bold text-dark">₹1,299</p>
-                      <button class="btn btn-primary btn-sm rounded-pill">
-                        View Details
-                      </button>
-                    </div>
-                  </NuxtLink>
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,4 +109,39 @@
 
 <script setup>
 import FilterSidebar from "@/components/FilterSidebar.vue";
+
+  const products = [
+    {
+      id: 1,
+      name: "LEGO City Police Set",
+      description: "Ages 6+",
+      originalPrice: 1599,
+      sellingPrice: 1299,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 2,
+      name: "Hot Wheels Car Pack",
+      description: "Pack of 5 racing cars",
+      originalPrice: 899,
+      sellingPrice: 699,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 3,
+      name: "Barbie Dreamhouse",
+      description: "Includes accessories",
+      originalPrice: 5999,
+      sellingPrice: 4999,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 4,
+      name: "Puzzle Game Set",
+      description: "Boosts problem-solving",
+      originalPrice: 599,
+      sellingPrice: 449,
+      image: "/assets/img/offer.jpeg",
+    },
+  ];
 </script>

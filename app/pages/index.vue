@@ -1,46 +1,36 @@
 <template>
     <div>
         <main class="main">
-          <!-- hero section -->
+          <!-- Hero Section with Slider -->
           <section id="hero" class="hero section">
-              <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div>
-                    <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-                      <NuxtLink :to="{ path: '/products', query: { offerId: 1 } }">
-                        <div class="border rounded-3 bg-white shadow-lg w-100 w-md-75 mb-4 mx-auto">
-                          <div class="row align-items-center g-0">
-                            <div class="col-5">
-                              <img src="/assets/img/offer.jpeg" alt="Offer 1" height="100" class="rounded-start w-100 object-fit-cover" />
-                            </div>
-                            <div class="col-7">
-                              <div class="p-2">
-                                <h2 class="text-danger mb-1"><b>Offer</b></h2>
-                                <h5 class="text-primary">Save Upto 40%</h5>
-                              </div>
-                            </div>
-                          </div>
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <Swiper
+                :modules="modules"
+                :slides-per-view="1"
+                :loop="true"
+                :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                :pagination="{ clickable: true }"
+                :navigation="false"
+                class="hero-swiper rounded-3"
+              >
+                <SwiperSlide v-for="(offer, index) in offers" :key="index">
+                  <NuxtLink :to="{ path: '/products', query: { offerId: offer.id } }">
+                    <div class="border rounded-3 shadow-lg w-100 w-md-75 mb-4 mx-auto bg-transparent" style="background: transparent !important; box-shadow: none;">
+                      <div class="row align-items-center g-0">
+                        <div class="col-12">
+                          <img
+                            :src="offer.image"
+                            :alt="offer.title"
+                            height="300"
+                            class="rounded w-100 object-fit-cover"
+                          />
                         </div>
-                      </NuxtLink>
-
-                      <!-- Offer Card 2 -->
-                      <NuxtLink :to="{ path: '/products', query: { offerId: 2 } }">
-                        <div class="border rounded-3 bg-white shadow-lg w-100 w-md-75 mb-4 mx-auto">
-                          <div class="row align-items-center g-0">
-                            <div class="col-5">
-                              <img src="/assets/img/offer2.jpeg" alt="Offer 2" height="100" class="rounded-start w-100 object-fit-cover" />
-                            </div>
-                            <div class="col-7">
-                              <div class="p-2">
-                                <h2 class="text-danger mb-1"><b>Offer</b></h2>
-                                <h5 class="text-primary">Save Upto 50%</h5>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </NuxtLink>
+                      </div>
                     </div>
-                  </div>
-              </div>
+                  </NuxtLink>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </section>
 
           <!-- categories -->
@@ -122,80 +112,40 @@
 
             <div class="container">
               <div class="row g-4">
-                <!-- Product 1 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/1`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
+                <div
+                  v-for="product in newArrivals"
+                  :key="product.id"
+                  class="col-6 col-sm-6 col-md-3"
+                >
+                  <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100 text-start">
+                    <NuxtLink :to="`/products/${product.id}`">
                       <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 1"
+                        :src="product.image"
+                        :alt="product.name"
                         class="img-fluid rounded-3 mb-3"
                         style="height: 200px; object-fit: cover;"
                       />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 1</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹3,999</span>
-                        <span class="text-success fw-bold">₹2,499</span>
-                      </div>
-                    </div>
-                  </NuxtLink>
-                </div>
+                    </NuxtLink>
 
-                <!-- Product 2 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/2`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
-                      <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 2"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 2</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹4,999</span>
-                        <span class="text-success fw-bold">₹2,999</span>
-                      </div>
-                    </div>
-                  </NuxtLink>
-                </div>
+                    <h5 class="fw-semibold text-dark mb-1">{{ product.name }}</h5>
+                    <p class="text-muted small mb-2">{{ product.description }}</p>
 
-                <!-- Product 3 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/3`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
-                      <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 3"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 3</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹2,499</span>
-                        <span class="text-success fw-bold">₹1,499</span>
-                      </div>
+                    <!-- Pricing -->
+                    <div class="mb-3">
+                      <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
+                      <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
                     </div>
-                  </NuxtLink>
-                </div>
 
-                <!-- Product 4 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/4`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
-                      <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 4"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 4</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹1,999</span>
-                        <span class="text-success fw-bold">₹999</span>
-                      </div>
+                    <!-- Actions -->
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                        Add to Cart
+                      </button>
+                      <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                        Buy Now
+                      </button>
                     </div>
-                  </NuxtLink>
+                  </div>
                 </div>
               </div>
             </div>
@@ -209,80 +159,40 @@
 
             <div class="container">
               <div class="row g-4">
-                <!-- Product 1 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/1`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
+                <div
+                  v-for="product in bestSellers"
+                  :key="product.id"
+                  class="col-6 col-sm-6 col-md-3"
+                >
+                  <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100 text-start">
+                    <NuxtLink :to="`/products/${product.id}`">
                       <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 1"
+                        :src="product.image"
+                        :alt="product.name"
                         class="img-fluid rounded-3 mb-3"
                         style="height: 200px; object-fit: cover;"
                       />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 1</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹3,999</span>
-                        <span class="text-success fw-bold">₹2,499</span>
-                      </div>
-                    </div>
-                  </NuxtLink>
-                </div>
+                    </NuxtLink>
 
-                <!-- Product 2 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/2`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
-                      <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 2"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 2</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹4,999</span>
-                        <span class="text-success fw-bold">₹2,999</span>
-                      </div>
-                    </div>
-                  </NuxtLink>
-                </div>
+                    <h5 class="fw-semibold text-dark mb-1">{{ product.name }}</h5>
+                    <p class="text-muted small mb-2">{{ product.description }}</p>
 
-                <!-- Product 3 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/3`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
-                      <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 3"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 3</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹2,499</span>
-                        <span class="text-success fw-bold">₹1,499</span>
-                      </div>
+                    <!-- Pricing -->
+                    <div class="mb-3">
+                      <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
+                      <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
                     </div>
-                  </NuxtLink>
-                </div>
 
-                <!-- Product 4 -->
-                <div class="col-6 col-sm-6 col-md-3">
-                  <NuxtLink :to="`/products/4`">
-                    <div class="product-card card border-0 shadow-sm rounded-4 p-3 h-100">
-                      <img
-                        src="/assets/img/offer.jpeg"
-                        alt="Product 4"
-                        class="img-fluid rounded-3 mb-3"
-                        style="height: 200px; object-fit: cover;"
-                      />
-                      <h5 class="fw-semibold text-dark mb-1">Product Name 4</h5>
-                      <div class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">₹1,999</span>
-                        <span class="text-success fw-bold">₹999</span>
-                      </div>
+                    <!-- Actions -->
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                        Add to Cart
+                      </button>
+                      <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                        Buy Now
+                      </button>
                     </div>
-                  </NuxtLink>
+                  </div>
                 </div>
               </div>
             </div>
@@ -290,3 +200,93 @@
         </main>
     </div>
 </template>
+
+<script setup>
+  import { Swiper, SwiperSlide } from "swiper/vue";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules"; // ✅ Vue 3/Nuxt 3 correct import
+
+  // Swiper styles
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  // Offers data (example)
+  const offers = [
+    { id: 1, title: "Offer 1", image: "/assets/img/offer.jpeg" },
+    { id: 2, title: "Offer 2", image: "/assets/img/offer2.jpeg" },
+    { id: 3, title: "Offer 3", image: "/assets/img/offer.jpeg" },
+  ];
+
+  // Register Swiper modules
+  const modules = [Navigation, Pagination, Autoplay];
+
+  const newArrivals = [
+    {
+      id: 1,
+      name: "Wooden Train Set",
+      description: "Classic toy for kids",
+      originalPrice: 3999,
+      sellingPrice: 2499,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 2,
+      name: "Remote Control Car",
+      description: "High-speed racing RC",
+      originalPrice: 4999,
+      sellingPrice: 2999,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 3,
+      name: "Puzzle Blocks",
+      description: "Educational toy",
+      originalPrice: 2499,
+      sellingPrice: 1499,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 4,
+      name: "Doll House",
+      description: "Beautiful with furniture",
+      originalPrice: 1999,
+      sellingPrice: 999,
+      image: "/assets/img/offer.jpeg",
+    },
+  ];
+
+  const bestSellers = [
+    {
+      id: 5,
+      name: "Action Figure Set",
+      description: "Superhero collection",
+      originalPrice: 3999,
+      sellingPrice: 2499,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 6,
+      name: "Drone Camera Toy",
+      description: "Fun flying drone",
+      originalPrice: 4999,
+      sellingPrice: 2999,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 7,
+      name: "Building Blocks",
+      description: "Creative play set",
+      originalPrice: 2499,
+      sellingPrice: 1499,
+      image: "/assets/img/offer.jpeg",
+    },
+    {
+      id: 8,
+      name: "RC Helicopter",
+      description: "Lightweight & durable",
+      originalPrice: 1999,
+      sellingPrice: 999,
+      image: "/assets/img/offer.jpeg",
+    },
+  ];
+</script>

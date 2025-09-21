@@ -110,3 +110,7 @@
   transform: scale(1.1);
   opacity: 0.8;
 }
+
+.hero-swiper {
+  height: 300px !important;
+}

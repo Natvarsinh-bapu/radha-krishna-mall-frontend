@@ -8,6 +8,9 @@
             <nav id="navmenu" class="navmenu">
               <ul class="nav justify-content-center gap-3">
                 <!-- Main Links -->
+                 <li class="nav-item">
+                  <input type="text" name="search" id="search" class="form-control" placeholder="Search..." style="width: 400px;">
+                 </li>
                 <li class="nav-item">
                     <NuxtLink to="/" exact-active-class="active" class="nav-link">
                     Home
