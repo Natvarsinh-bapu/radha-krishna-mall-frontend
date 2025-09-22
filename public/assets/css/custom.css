@@ -112,31 +112,35 @@
 }
 
 .hero-swiper {
-  height: 300px !important;
+  height: 300px;
 }
 
 .slider-image {
-  height: 300px !important;
+  height: 300px;
 }
 
 /* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
   .hero-swiper {
-    height: 240px !important;
+    height: 250px;
   }
 
   .slider-image {
-    height: 240px !important;
+    height: 250px;
   }
 }
 
 /* Mobile (≤ 767px) */
 @media (max-width: 767px) {
   .hero-swiper {
-    height: 120px !important;
+    height: 160px;
   }
 
   .slider-image {
-    height: 120px !important;
+    height: 160px;
+  }
+
+  .hero {
+    padding-bottom: 0 !important;
   }
 }

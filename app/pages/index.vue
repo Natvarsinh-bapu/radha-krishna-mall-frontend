@@ -2,7 +2,7 @@
     <div>
         <main class="main">
           <!-- Hero Section with Slider -->
-          <section id="hero" class="hero section">
+          <section id="hero" class="hero">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
               <Swiper
                 :modules="modules"
