@@ -143,4 +143,9 @@
   .hero {
     padding-bottom: 0 !important;
   }
+
+  .edit-profile-btn {
+    margin-top: 10px;
+    text-align: center;
+  }
 }

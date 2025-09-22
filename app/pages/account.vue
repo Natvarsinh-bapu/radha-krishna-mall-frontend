@@ -14,27 +14,33 @@
         <div class="container">
           <!-- Profile Info Horizontal Card -->
           <div class="card border-0 shadow-sm rounded-4 p-4 mb-5">
-            <div class="d-flex align-items-center">
-              <img
-                src="/assets/img/offer.jpeg"
-                alt="Profile"
-                class="rounded-circle me-4"
-                width="100"
-                height="100"
-                style="object-fit: cover;"
-              />
-              <div>
-                <h5 class="fw-bold mb-1">{{ user.name }}</h5>
-                <p class="mb-1 text-muted">{{ user.email }}</p>
-                <p class="mb-0 text-muted">{{ user.mobile }}</p>
+            <div class="row align-items-center">
+              <div class="col-md-9">
+                <div class="d-flex justify-content-start align-items-center">
+                  <img
+                    src="/assets/img/offer.jpeg"
+                    alt="Profile"
+                    class="rounded-circle me-4"
+                    width="100"
+                    height="100"
+                    style="object-fit: cover;"
+                  />
+                  <div>
+                    <h5 class="fw-bold mb-1">{{ user.name }}</h5>
+                    <p class="mb-1 text-muted">{{ user.email }}</p>
+                    <p class="mb-0 text-muted">{{ user.mobile }}</p>
+                  </div>
+                </div>
               </div>
-              <div class="ms-auto">
-                <NuxtLink
-                  to="/"
-                  class="btn btn-sm btn-outline-primary rounded-pill"
-                >
-                  Edit Profile
-                </NuxtLink>
+              <div class="col-md-3">
+                <div class="ms-auto edit-profile-btn">
+                  <NuxtLink
+                    to="/"
+                    class="btn btn-sm btn-outline-primary rounded-pill"
+                  >
+                    Edit Profile
+                  </NuxtLink>
+                </div>
               </div>
             </div>
           </div>
