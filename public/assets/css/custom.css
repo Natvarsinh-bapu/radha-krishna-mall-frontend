@@ -114,3 +114,29 @@
 .hero-swiper {
   height: 300px !important;
 }
+
+.slider-image {
+  height: 300px !important;
+}
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .hero-swiper {
+    height: 240px !important;
+  }
+
+  .slider-image {
+    height: 240px !important;
+  }
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+  .hero-swiper {
+    height: 120px !important;
+  }
+
+  .slider-image {
+    height: 120px !important;
+  }
+}

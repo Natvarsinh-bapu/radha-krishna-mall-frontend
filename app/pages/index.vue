@@ -21,8 +21,7 @@
                           <img
                             :src="offer.image"
                             :alt="offer.title"
-                            height="300"
-                            class="rounded w-100 object-fit-cover"
+                            class="rounded w-100 object-fit-cover slider-image"
                           />
                         </div>
                       </div>
