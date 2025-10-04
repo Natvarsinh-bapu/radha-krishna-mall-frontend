@@ -38,68 +38,249 @@
               <h2 class="fw-bold">Categories</h2>
             </div>
 
-            <div class="container">
-              <div class="row g-4 justify-content-center">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <Swiper
+                :modules="modules"
+                :slides-per-view="2"
+                :loop="true"
+                :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                :breakpoints="{
+                  576: { slidesPerView: 3 },
+                  768: { slidesPerView: 4 },
+                  992: { slidesPerView: 5 },
+                  1200: { slidesPerView: 6 }
+                }"
+                :navigation="false"
+                class="category-swiper"
+              >
                 <!-- Character 1 -->
-                <div class="col-md-2 col-6">
-                  <NuxtLink :to="{ path: '/products', query: { characterId: 'spiderman' } }" class="text-decoration-none">
-                    <div class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center">
-                      <img src="/assets/img/spiderman.jpg" alt="Spider-Man" class="img-fluid rounded-5 mb-2 theme-img" />
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'spiderman' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/spiderman.jpg"
+                        alt="Spider-Man"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
                       <h6 class="mt-2 fw-semibold text-dark">Spider-Man</h6>
                     </div>
                   </NuxtLink>
-                </div>
+                </SwiperSlide>
 
                 <!-- Character 2 -->
-                <div class="col-md-2 col-6">
-                  <NuxtLink :to="{ path: '/products', query: { characterId: 'frozen' } }" class="text-decoration-none">
-                    <div class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center">
-                      <img src="/assets/img/frozen.jpeg" alt="Frozen" class="img-fluid rounded-5 mb-2 theme-img" />
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'frozen' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/frozen.jpeg"
+                        alt="Frozen"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
                       <h6 class="mt-2 fw-semibold text-dark">Frozen</h6>
                     </div>
                   </NuxtLink>
-                </div>
+                </SwiperSlide>
 
                 <!-- Character 3 -->
-                <div class="col-md-2 col-6">
-                  <NuxtLink :to="{ path: '/products', query: { characterId: 'donald-duck' } }" class="text-decoration-none">
-                    <div class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center">
-                      <img src="/assets/img/donald-duck.png" alt="Donald Duck" class="img-fluid rounded-5 mb-2 theme-img" />
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'donald-duck' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/donald-duck.png"
+                        alt="Donald Duck"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
                       <h6 class="mt-2 fw-semibold text-dark">Donald Duck</h6>
                     </div>
                   </NuxtLink>
-                </div>
+                </SwiperSlide>
 
                 <!-- Character 4 -->
-                <div class="col-md-2 col-6">
-                  <NuxtLink :to="{ path: '/products', query: { characterId: 'avengers' } }" class="text-decoration-none">
-                    <div class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center">
-                      <img src="/assets/img/avengers.jpeg" alt="Avengers" class="img-fluid rounded-5 mb-2 theme-img" />
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'avengers' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/avengers.jpeg"
+                        alt="Avengers"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
                       <h6 class="mt-2 fw-semibold text-dark">Avengers</h6>
                     </div>
                   </NuxtLink>
-                </div>
+                </SwiperSlide>
 
                 <!-- Character 5 -->
-                <div class="col-md-2 col-6">
-                  <NuxtLink :to="{ path: '/products', query: { characterId: 'barbie' } }" class="text-decoration-none">
-                    <div class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center">
-                      <img src="/assets/img/barbie.png" alt="Barbie" class="img-fluid rounded-5 mb-2 theme-img" />
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'barbie' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/barbie.png"
+                        alt="Barbie"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
                       <h6 class="mt-2 fw-semibold text-dark">Barbie</h6>
                     </div>
                   </NuxtLink>
-                </div>
+                </SwiperSlide>
 
                 <!-- Character 6 -->
-                <div class="col-md-2 col-6">
-                  <NuxtLink :to="{ path: '/products', query: { characterId: 'super-mario' } }" class="text-decoration-none">
-                    <div class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center">
-                      <img src="/assets/img/super-mario.png" alt="Super Mario" class="img-fluid rounded-5 mb-2 theme-img" />
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'super-mario' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/super-mario.png"
+                        alt="Super Mario"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
                       <h6 class="mt-2 fw-semibold text-dark">Super Mario</h6>
                     </div>
                   </NuxtLink>
-                </div>
-              </div>
+                </SwiperSlide>
+
+                <!-- Character 1 -->
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'spiderman' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/spiderman.jpg"
+                        alt="Spider-Man"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
+                      <h6 class="mt-2 fw-semibold text-dark">Spider-Man</h6>
+                    </div>
+                  </NuxtLink>
+                </SwiperSlide>
+
+                <!-- Character 2 -->
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'frozen' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/frozen.jpeg"
+                        alt="Frozen"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
+                      <h6 class="mt-2 fw-semibold text-dark">Frozen</h6>
+                    </div>
+                  </NuxtLink>
+                </SwiperSlide>
+
+                <!-- Character 3 -->
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'donald-duck' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/donald-duck.png"
+                        alt="Donald Duck"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
+                      <h6 class="mt-2 fw-semibold text-dark">Donald Duck</h6>
+                    </div>
+                  </NuxtLink>
+                </SwiperSlide>
+
+                <!-- Character 4 -->
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'avengers' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/avengers.jpeg"
+                        alt="Avengers"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
+                      <h6 class="mt-2 fw-semibold text-dark">Avengers</h6>
+                    </div>
+                  </NuxtLink>
+                </SwiperSlide>
+
+                <!-- Character 5 -->
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'barbie' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/barbie.png"
+                        alt="Barbie"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
+                      <h6 class="mt-2 fw-semibold text-dark">Barbie</h6>
+                    </div>
+                  </NuxtLink>
+                </SwiperSlide>
+
+                <!-- Character 6 -->
+                <SwiperSlide>
+                  <NuxtLink
+                    :to="{ path: '/products', query: { characterId: 'super-mario' } }"
+                    class="text-decoration-none"
+                  >
+                    <div
+                      class="theme-card text-center bg-white p-3 rounded-4 shadow-sm h-100 d-flex flex-column align-items-center"
+                    >
+                      <img
+                        src="/assets/img/super-mario.png"
+                        alt="Super Mario"
+                        class="img-fluid rounded-5 mb-2 theme-img"
+                      />
+                      <h6 class="mt-2 fw-semibold text-dark">Super Mario</h6>
+                    </div>
+                  </NuxtLink>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </section>
 
@@ -290,3 +471,27 @@
     },
   ];
 </script>
+
+<style scoped>
+.category-swiper {
+  padding: 0 1rem;
+}
+
+.category-swiper .swiper-button-next,
+.category-swiper .swiper-button-prev {
+  color: #333;
+  top: 40%;
+}
+
+.theme-card {
+  width: 100%;
+  max-width: 170px;
+  margin: 0 auto;
+}
+
+.theme-img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+</style>
