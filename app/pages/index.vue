@@ -45,6 +45,7 @@
                 :loop="true"
                 :autoplay="{ delay: 3000, disableOnInteraction: false }"
                 :breakpoints="{
+                  0: { slidesPerView: 3, spaceBetween: 5 },
                   576: { slidesPerView: 3 },
                   768: { slidesPerView: 4 },
                   992: { slidesPerView: 5 },
@@ -493,5 +494,21 @@
   height: 100px;
   width: 100px;
   object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+  .theme-card {
+    max-width: 90px !important;
+    padding: 0.5rem !important;
+  }
+
+  .theme-img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .theme-card h6 {
+    font-size: 0.7rem !important;
+  }
 }
 </style>

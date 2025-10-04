@@ -45,6 +45,13 @@
         <strong class="px-1 sitename">Radha Krishna Mall</strong>
         <span>All Rights Reserved</span>
       </p>
+
+      <!-- Links -->
+      <div class="footer-links mt-3">
+        <NuxtLink to="/privacy-policy" class="text-decoration-none text-muted mx-2">Privacy Policy</NuxtLink> |
+        <NuxtLink to="/terms-and-conditions" class="text-decoration-none text-muted mx-2">Terms & Conditions</NuxtLink>
+      </div>
+
       <div class="credits">
         Designed by <a href="">bapu</a>
       </div>
