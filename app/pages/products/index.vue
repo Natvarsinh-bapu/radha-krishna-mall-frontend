@@ -5,32 +5,68 @@
       <section id="product-listing" class="section py-5 mt-5">
         <div class="container">
           <div class="row">
-            <!-- Sidebar Filter -->
-            <aside class="col-lg-3 col-md-4 mb-4 d-none d-md-block">
-              <FilterSidebar />
-            </aside>
+            <!-- Overlay (for mobile) -->
+            <transition name="fade">
+              <div
+                v-if="showFilter"
+                class="mobile-overlay d-md-none"
+                @click="toggleFilter"
+              ></div>
+            </transition>
 
-            <!-- Product Grid -->
-            <div class="col-lg-9 col-md-8">
-              <!-- Mobile Filter Toggle -->
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="fw-bold">Products Collection</h5>
-                <div class="d-md-none">
+            <!-- Filter Sidebar -->
+            <transition name="slide-fade">
+              <aside
+                v-if="showFilter"
+                class="col-lg-3 col-md-4 mb-4 border-end pe-3 filter-sidebar"
+              >
+                <!-- Mobile Close Button -->
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3 d-md-none sidebar-header"
+                >
+                  <h5 class="fw-bold mb-0">Filters</h5>
                   <button
-                    class="btn btn-outline-primary btn-sm rounded-pill"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#filterSidebar"
+                    class="btn btn-outline-secondary btn-sm rounded-pill"
+                    @click="toggleFilter"
                   >
-                    Filters
+                    ✕ Close
                   </button>
                 </div>
-                <select class="form-select w-auto d-none d-md-block">
-                  <option>Sort by: Default</option>
-                  <option>Price: Low to High</option>
-                  <option>Price: High to Low</option>
-                  <option>Newest</option>
-                </select>
+
+                <FilterSidebar />
+              </aside>
+            </transition>
+
+            <!-- Product Grid -->
+            <div :class="showFilter ? 'col-lg-9 col-md-8' : 'col-12'">
+              <!-- Header Row -->
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">Products Collection</h5>
+
+                <!-- Filter Toggle Button (Mobile) -->
+                <button
+                  class="btn btn-outline-primary btn-sm rounded-pill d-md-none"
+                  @click="toggleFilter"
+                >
+                  {{ showFilter ? "Hide Filters" : "Filter" }}
+                </button>
+
+                <!-- Desktop Controls -->
+                <div class="d-none d-md-flex align-items-center gap-2">
+                  <button
+                    class="btn btn-outline-primary btn-sm rounded-pill"
+                    @click="toggleFilter"
+                  >
+                    {{ showFilter ? "Hide Filters" : "Filter" }}
+                  </button>
+
+                  <select class="form-select w-auto">
+                    <option>Sort by: Default</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest</option>
+                  </select>
+                </div>
               </div>
 
               <!-- Product Grid -->
@@ -38,12 +74,11 @@
                 <div
                   v-for="product in products"
                   :key="product.id"
-                  class="col-6 col-sm-6 col-md-4"
+                  :class="productColClass"
                 >
                   <div
                     class="card h-100 shadow-sm border rounded-4 text-decoration-none text-dark product-card"
                   >
-                    <!-- Image -->
                     <NuxtLink :to="`/products/${product.id}`">
                       <img
                         :src="product.image"
@@ -53,25 +88,30 @@
                       />
                     </NuxtLink>
 
-                    <!-- Body -->
                     <div class="card-body text-start">
                       <h6 class="fw-semibold">{{ product.name }}</h6>
                       <p class="text-muted small">{{ product.description }}</p>
 
-                      <!-- Pricing -->
                       <p class="mb-2">
-                        <span class="text-muted text-decoration-line-through me-2">
+                        <span
+                          class="text-muted text-decoration-line-through me-2"
+                        >
                           ₹{{ product.originalPrice }}
                         </span>
-                        <span class="fw-bold text-dark">₹{{ product.sellingPrice }}</span>
+                        <span class="fw-bold text-dark">
+                          ₹{{ product.sellingPrice }}
+                        </span>
                       </p>
 
-                      <!-- Actions: stacked on mobile -->
                       <div class="d-flex flex-column flex-md-row gap-2">
-                        <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                        <button
+                          class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1"
+                        >
                           Add to Cart
                         </button>
-                        <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                        <button
+                          class="btn btn-danger btn-sm rounded-pill flex-grow-1"
+                        >
                           Buy Now
                         </button>
                       </div>
@@ -79,35 +119,30 @@
                   </div>
                 </div>
               </div>
+              <!-- /Product Grid -->
             </div>
           </div>
         </div>
       </section>
-
-      <!-- Mobile Offcanvas Filter -->
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="filterSidebar"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title">Filters</h5>
-          <button
-            type="button"
-            class="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-          ></button>
-        </div>
-        <div class="offcanvas-body">
-          <FilterSidebar />
-        </div>
-      </div>
     </main>
   </div>
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 import FilterSidebar from "@/components/FilterSidebar.vue";
+
+const showFilter = ref(false);
+
+const toggleFilter = () => {
+  showFilter.value = !showFilter.value;
+};
+
+const productColClass = computed(() =>
+  showFilter.value
+    ? "col-6 col-sm-6 col-md-4 col-lg-4"
+    : "col-6 col-sm-6 col-md-3 col-lg-3"
+);
 
 const products = [
   {
@@ -142,5 +177,81 @@ const products = [
     sellingPrice: 449,
     image: "/assets/img/offer.jpeg",
   },
+  {
+    id: 5,
+    name: "Toy Robot",
+    description: "Interactive and fun",
+    originalPrice: 999,
+    sellingPrice: 799,
+    image: "/assets/img/offer.jpeg",
+  },
+  {
+    id: 6,
+    name: "Building Blocks",
+    description: "Enhance creativity",
+    originalPrice: 1299,
+    sellingPrice: 999,
+    image: "/assets/img/offer.jpeg",
+  },
 ];
 </script>
+
+<style scoped>
+/* Sidebar and overlay transitions */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.slide-fade-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Overlay for mobile sidebar */
+.mobile-overlay {
+  position: fixed;
+  top: 93px; /* same as header height */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1049;
+}
+
+/* Mobile sidebar style */
+@media (max-width: 767.98px) {
+  .filter-sidebar {
+    position: fixed;
+    top: 93px; /* below header */
+    left: 0;
+    z-index: 1050;
+    width: 100%; /* full width */
+    height: calc(100% - 60px);
+    background-color: #fff;
+    overflow-y: auto;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 0 10px;
+    z-index: 1051;
+  }
+}
+</style>
