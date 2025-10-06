@@ -58,10 +58,10 @@
 
               <!-- Add to Cart & Buy Now Buttons -->
               <div class="d-flex flex-column flex-lg-row gap-3">
-                <button class="btn btn-outline-primary rounded-pill flex-grow-1">
+                <button class="btn-product-card btn btn-outline-primary rounded-pill flex-grow-1">
                   Add to Cart
                 </button>
-                <button class="btn btn-danger rounded-pill flex-grow-1">
+                <button class="btn-product-card btn btn-danger rounded-pill flex-grow-1">
                   Buy Now
                 </button>
               </div>
@@ -91,21 +91,21 @@
                       />
                     </NuxtLink>
 
-                    <h5 class="fw-semibold text-dark mb-1">{{ product.name }}</h5>
-                    <p class="text-muted small mb-2">{{ product.description }}</p>
+                    <h5 class="fw-semibold text-dark mb-1 product-name">{{ product.name }}</h5>
+                    <p class="text-muted small mb-2 product-description">{{ product.description }}</p>
 
                     <!-- Pricing -->
                     <div class="mb-3">
-                      <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
-                      <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
+                      <span class="product-price text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
+                      <span class="product-price text-success fw-bold">₹{{ product.sellingPrice }}</span>
                     </div>
 
                     <!-- Actions: stacked on mobile -->
                     <div class="d-flex flex-column flex-md-row gap-2">
-                      <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
+                      <button class="btn-product-card btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
                         Add to Cart
                       </button>
-                      <button class="btn btn-danger btn-sm rounded-pill flex-grow-1">
+                      <button class="btn-product-card btn btn-danger btn-sm rounded-pill flex-grow-1">
                         Buy Now
                       </button>
                     </div>

@@ -148,4 +148,51 @@
     margin-top: 10px;
     text-align: center;
   }
+
+  .mb-5 {
+    margin-bottom: 1rem !important;
+  }
+
+  .py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .p-3 {
+    padding: 0 !important;
+  }
+
+  .g-4, .gx-4 {
+    --bs-gutter-x: 0.5rem;
+  }
+
+  #product-listing {
+    padding-top: 4rem !important;
+  }
+
+  .h5, h5 {
+    font-size: 1rem !important;
+  }
+
+  input#search {
+    display: none !important;
+  }
+
+  .product-name {
+    font-size: 14px !important;
+  }
+
+  .product-price {
+    font-size: 12px !important;
+  }
+
+  .btn-product-card {
+    font-size: 11px !important;
+    width: 80%;
+    margin: auto;
+  }
+
+  .filter-btn {
+    font-size: 12px !important;
+  }
 }

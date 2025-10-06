@@ -26,10 +26,10 @@
                 >
                   <h5 class="fw-bold mb-0">Filters</h5>
                   <button
-                    class="btn btn-outline-secondary btn-sm rounded-pill"
+                    class="filter-btn btn btn-outline-secondary btn-sm rounded-pill"
                     @click="toggleFilter"
                   >
-                    ✕ Close
+                    <i class="bi bi-x-lg"></i>
                   </button>
                 </div>
 
@@ -45,7 +45,7 @@
 
                 <!-- Filter Toggle Button (Mobile) -->
                 <button
-                  class="btn btn-outline-primary btn-sm rounded-pill d-md-none"
+                  class="filter-btn btn btn-outline-primary btn-sm rounded-pill d-md-none"
                   @click="toggleFilter"
                 >
                   {{ showFilter ? "Hide Filters" : "Filter" }}
@@ -89,28 +89,27 @@
                     </NuxtLink>
 
                     <div class="card-body text-start">
-                      <h6 class="fw-semibold">{{ product.name }}</h6>
-                      <p class="text-muted small">{{ product.description }}</p>
+                      <h6 class="fw-semibold product-name">{{ product.name }}</h6>
 
                       <p class="mb-2">
                         <span
-                          class="text-muted text-decoration-line-through me-2"
+                          class="product-price text-muted text-decoration-line-through me-2"
                         >
                           ₹{{ product.originalPrice }}
                         </span>
-                        <span class="fw-bold text-dark">
+                        <span class="product-price fw-bold text-dark">
                           ₹{{ product.sellingPrice }}
                         </span>
                       </p>
 
                       <div class="d-flex flex-column flex-md-row gap-2">
                         <button
-                          class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1"
+                          class="btn-product-card btn btn-outline-primary btn-sm rounded-pill flex-grow-1"
                         >
                           Add to Cart
                         </button>
                         <button
-                          class="btn btn-danger btn-sm rounded-pill flex-grow-1"
+                          class="btn-product-card btn btn-danger btn-sm rounded-pill flex-grow-1"
                         >
                           Buy Now
                         </button>

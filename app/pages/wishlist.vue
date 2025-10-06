@@ -29,13 +29,12 @@
 
                 <!-- Product Body -->
                 <div class="card-body">
-                  <h6 class="fw-semibold text-dark mb-1">{{ product.name }}</h6>
-                  <p class="text-muted small mb-2">{{ product.description }}</p>
+                  <h6 class="fw-semibold text-dark mb-1 product-name">{{ product.name }}</h6>
 
                   <!-- Pricing -->
                   <div class="mb-3">
-                    <span class="text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
-                    <span class="text-success fw-bold">₹{{ product.sellingPrice }}</span>
+                    <span class="product-price text-muted text-decoration-line-through me-2">₹{{ product.originalPrice }}</span>
+                    <span class="product-price text-success fw-bold">₹{{ product.sellingPrice }}</span>
                   </div>
 
                   <!-- Buttons: stacked on mobile -->
@@ -47,7 +46,7 @@
                       <i class="bi bi-trash"></i>
                     </button>
                     <button
-                      class="btn btn-sm btn-primary rounded-pill flex-grow-1"
+                      class="btn-product-card btn btn-sm btn-primary rounded-pill flex-grow-1"
                       @click="addToCart(product)"
                     >
                       Add to Cart
