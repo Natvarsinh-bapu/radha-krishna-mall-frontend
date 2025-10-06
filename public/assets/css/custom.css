@@ -188,11 +188,7 @@
 
   .btn-product-card {
     font-size: 11px !important;
-    width: 80%;
-    margin: auto;
-  }
-
-  .filter-btn {
-    font-size: 12px !important;
+    width: 80% !important;
+    margin: auto !important;
   }
 }

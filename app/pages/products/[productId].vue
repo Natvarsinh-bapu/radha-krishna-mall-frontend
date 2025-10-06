@@ -57,7 +57,7 @@
               </ul>
 
               <!-- Add to Cart & Buy Now Buttons -->
-              <div class="d-flex flex-column flex-lg-row gap-3">
+              <div class="d-flex flex-column flex-lg-row gap-3 mb-2">
                 <button class="btn-product-card btn btn-outline-primary rounded-pill flex-grow-1">
                   Add to Cart
                 </button>
@@ -101,7 +101,7 @@
                     </div>
 
                     <!-- Actions: stacked on mobile -->
-                    <div class="d-flex flex-column flex-md-row gap-2">
+                    <div class="d-flex flex-column flex-md-row gap-2 mb-2">
                       <button class="btn-product-card btn btn-outline-primary btn-sm rounded-pill flex-grow-1">
                         Add to Cart
                       </button>

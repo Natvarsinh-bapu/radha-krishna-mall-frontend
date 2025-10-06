@@ -26,7 +26,7 @@
                 >
                   <h5 class="fw-bold mb-0">Filters</h5>
                   <button
-                    class="filter-btn btn btn-outline-secondary btn-sm rounded-pill"
+                    class="btn btn-outline-secondary btn-sm rounded-pill"
                     @click="toggleFilter"
                   >
                     <i class="bi bi-x-lg"></i>
@@ -45,7 +45,7 @@
 
                 <!-- Filter Toggle Button (Mobile) -->
                 <button
-                  class="filter-btn btn btn-outline-primary btn-sm rounded-pill d-md-none"
+                  class="btn btn-outline-primary btn-sm rounded-pill d-md-none"
                   @click="toggleFilter"
                 >
                   {{ showFilter ? "Hide Filters" : "Filter" }}
@@ -102,7 +102,7 @@
                         </span>
                       </p>
 
-                      <div class="d-flex flex-column flex-md-row gap-2">
+                      <div class="d-flex flex-column flex-md-row gap-2 mb-2">
                         <button
                           class="btn-product-card btn btn-outline-primary btn-sm rounded-pill flex-grow-1"
                         >
