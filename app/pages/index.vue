@@ -496,13 +496,13 @@
 
 @media (max-width: 575.98px) {
   .theme-card {
-    max-width: 90px !important;
+    max-width: 100px !important;
     padding: 0.5rem !important;
   }
 
   .theme-img {
-    width: 60px !important;
-    height: 60px !important;
+    width: 70px !important;
+    height: 70px !important;
   }
 
   .theme-card h6 {

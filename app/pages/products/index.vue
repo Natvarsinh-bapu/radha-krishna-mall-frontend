@@ -29,7 +29,7 @@
                     class="btn btn-outline-secondary btn-sm rounded-pill"
                     @click="toggleFilter"
                   >
-                    <i class="bi bi-x-lg"></i>
+                    ✕ Close
                   </button>
                 </div>
 
