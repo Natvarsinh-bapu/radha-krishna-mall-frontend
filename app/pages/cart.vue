@@ -10,7 +10,7 @@
       </section>
 
       <!-- Cart Items -->
-      <section class="section">
+      <div>
         <div class="container">
           <div class="row">
             <!-- Cart List -->
@@ -114,7 +114,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
   </div>
 </template>

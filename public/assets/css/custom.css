@@ -191,4 +191,12 @@
     width: 80% !important;
     margin: auto !important;
   }
+
+  section, .section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 90px 0 0 0;
+    scroll-margin-top: 90px;
+    overflow: clip;
+  }
 }

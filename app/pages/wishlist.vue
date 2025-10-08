@@ -2,7 +2,7 @@
   <div>
     <main class="main py-5">
       <!-- Page Header -->
-      <section class="section text-center">
+      <section class="text-center">
         <div class="container">
           <h2 class="fw-bold">My Wishlist</h2>
           <p class="text-muted">Save your favorite products and shop them later</p>
@@ -10,7 +10,7 @@
       </section>
 
       <!-- Wishlist Items -->
-      <section class="section">
+      <div>
         <div class="container">
           <div class="row g-4">
             <div
@@ -65,7 +65,7 @@
             </NuxtLink>
           </div>
         </div>
-      </section>
+      </div>
     </main>
   </div>
 </template>

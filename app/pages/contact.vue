@@ -1,8 +1,8 @@
 <template>
   <div>
-    <main class="main">
+    <main class="main py-5">
       <!-- Contact Heading -->
-      <section class="section py-5 mt-5">
+      <section>
         <div class="container text-center mb-4" data-aos="fade-up">
           <h2 class="fw-bold">Contact Us</h2>
           <p class="text-muted">We’d love to hear from you. Fill out the form and our team will get back to you as soon as possible.</p>
@@ -37,7 +37,7 @@
 
             <!-- Contact Info -->
             <div class="col-lg-4">
-              <div class="bg-white p-4 shadow rounded-4 h-100 d-flex flex-column justify-content-center">
+              <div class="bg-white p-4 shadow rounded-4 h-100 d-flex flex-column justify-content-start">
                 <div class="mb-3">
                   <h5 class="fw-bold">Email</h5>
                   <p class="text-muted mb-0">info@productstore.com</p>
